@@ -1,14 +1,14 @@
 [
   {
-    "repository": "android_device_xiaomi_sm4450-common",
+    "repository": "device_xiaomi_sm4450-common",
     "target_path": "device/xiaomi/sm4450-common"
   },
   {
-    "repository": "android_kernel_xiaomi_sky-6.12",
+    "repository": "kernel_xiaomi_sky-6.12",
     "target_path": "kernel/xiaomi/sky"
   },
   {
-    "repository": "android_kernel_xiaomi_sky-devicetrees-6.12",
+    "repository": "kernel_xiaomi_sky-devicetrees-6.12",
     "target_path": "kernel/xiaomi/sky-devicetrees"
   }
 ]

@@ -36,7 +36,12 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Fingerprint of the stock ROM this tree extracts from. Must match the image
 # used with extract-files, otherwise the vendor blob set will not correlate.
+#
+# Verified against the extracted vendor/odm images:
+#   ro.vendor.build.fingerprint=Redmi/sky/sky:12/SKQ1.230118.001/OS2.0.204.0.VMWJPXM:user/release-keys
+#   ro.vendor.build.version.sdk=32
+#   ro.vendor.build.security_patch=2026-04-05
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="sky-user 15 AQ3A.240912.001 OS2.0.205.0.VMWJPXM release-keys" \
-    BuildFingerprint=Redmi/sky/sky:15/AQ3A.240912.001/OS2.0.205.0.VMWJPXM:user/release-keys \
+    BuildDesc="sky-user 12 SKQ1.230118.001 OS2.0.204.0.VMWJPXM release-keys" \
+    BuildFingerprint=Redmi/sky/sky:12/SKQ1.230118.001/OS2.0.204.0.VMWJPXM:user/release-keys \
     DeviceProduct=sky
