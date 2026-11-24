@@ -10,5 +10,9 @@
   {
     "repository": "kernel_xiaomi_sky-devicetrees-6.12",
     "target_path": "kernel/xiaomi/sky-devicetrees"
+  },
+  {
+    "repository": "kernel_xiaomi_sky-modules",
+    "target_path": "kernel/xiaomi/sky-modules"
   }
 ]
