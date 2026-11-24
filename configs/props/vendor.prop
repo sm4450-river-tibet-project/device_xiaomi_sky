@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Audio
+ro.vendor.audio.sdk.fluencetype=none
+ro.vendor.audio.sdk.ssr=false
+
+# Display
+ro.vendor.display.type=oled
+ro.vendor.display.capa=5
+
+# Graphics
+ro.vendor.display.ad=1
+ro.vendor.display.ad.sdr_calib_data=/vendor/etc/ad_calib.cfg
+
+# USB
+persist.vendor.usb.config=mtp,adb
+
+# Radio
+persist.vendor.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.enableadvancedscan=true
