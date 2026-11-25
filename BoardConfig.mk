@@ -84,20 +84,8 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 BOARD_USES_METADATA_PARTITION := true
 
-# A/B
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    odm \
-    product \
-    system \
-    system_ext \
-    vbmeta \
-    vbmeta_system \
-    vendor \
-    vendor_boot \
-    vendor_dlkm
+# A/B is declared in the common tree, including the OTA partition list; a second
+# list here would silently replace it.
 
 # SELinux
 # The policy lives in the common tree; there is no sky-specific policy yet, and

@@ -14,8 +14,3 @@ $(call inherit-product, device/xiaomi/sm4450-common/common.mk)
 # Device-specific props
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=440
-
-# A/B
-AB_OTA_UPDATER := true
-PRODUCT_VIRTUAL_AB_OTA := true
-PRODUCT_VIRTUAL_AB_COMPRESSION := true
