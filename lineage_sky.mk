@@ -29,19 +29,28 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := sky
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := Redmi 12 5G
+PRODUCT_MODEL := 23076RA4BR
 PRODUCT_NAME := lineage_sky
+
+# Marketing name shown in Settings > About phone.
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.marketname=Redmi 12 5G
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Fingerprint of the stock ROM this tree extracts from. Must match the image
-# used with extract-files, otherwise the vendor blob set will not correlate.
-#
-# Verified against the extracted vendor/odm images:
-#   ro.vendor.build.fingerprint=Redmi/sky/sky:12/SKQ1.230118.001/OS2.0.204.0.VMWJPXM:user/release-keys
-#   ro.vendor.build.version.sdk=32
-#   ro.vendor.build.security_patch=2026-04-05
+# Maintainer. LineageOS reads PRODUCT_MAINTAINER when generating the build
+# metadata that ships in the ROM (proprietary/lineage build vars are set by the
+# build script, so the build type is not declared here).
+PRODUCT_MAINTAINER := Yassin
+
+# Fingerprint of the stock ROM these blobs were extracted from. Verified against
+# the extracted vendor/build_S88029JA1.prop, which is the SKU that carries our
+# retail model number:
+#   ro.vendor.build.fingerprint=Redmi/river_jp/river:14/UKQ1.231003.002/OS2.0.204.0.VMWJPXM:user/release-keys
+#   ro.product.vendor.model=23076RA4BR
+#   ro.product.vendor.marketname=Redmi 12 5G
+#   ro.product.device=river
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="sky-user 12 SKQ1.230118.001 OS2.0.204.0.VMWJPXM release-keys" \
-    BuildFingerprint=Redmi/sky/sky:12/SKQ1.230118.001/OS2.0.204.0.VMWJPXM:user/release-keys \
-    DeviceProduct=sky
+    BuildDesc="river_jp-user 14 UKQ1.231003.002 OS2.0.204.0.VMWJPXM release-keys" \
+    BuildFingerprint=Redmi/river_jp/river:14/UKQ1.231003.002/OS2.0.204.0.VMWJPXM:user/release-keys \
+    DeviceProduct=river_jp
