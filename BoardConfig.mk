@@ -100,8 +100,8 @@ AB_OTA_PARTITIONS += \
     vendor_dlkm
 
 # SELinux
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-BOARD_PRODUCT_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/product
+# The policy lives in the common tree; there is no sky-specific policy yet, and
+# the common tree has no product policy (only vendor), so product is not listed.
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := t
@@ -109,6 +109,5 @@ BOARD_USES_QCOM_HARDWARE := t
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/props/product.prop
 
 -include vendor/lineage/config/BoardConfigReservedSize.mk
