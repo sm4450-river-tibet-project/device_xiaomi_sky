@@ -10,8 +10,10 @@ DEVICE_PATH := device/xiaomi/sky
 include device/xiaomi/sm4450-common/BoardConfigCommon.mk
 
 # Architecture
-# SM4450 (Snapdragon 4 Gen 2) is an ARMv8.2-A part with a 32-bit-capable
-# userspace, so both ABIs are built, same as other qcom trees.
+# 64-bit only. The 6.12 kernel's headers_install exports the arm64 UAPI tree
+# (asm/sigcontext.h uses __uint128_t, which does not exist on 32-bit ARM) into
+# generated_kernel_includes, and that dir lands on -I ahead of bionic's
+# asm-arm (-isystem), so every 32-bit compile that reaches <signal.h> fails.
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a-branchprot
 TARGET_CPU_ABI := arm64-v8a
@@ -19,12 +21,8 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := kryo
 
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-2a
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
+TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_SUPPORTS_32_BIT_APPS := false
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := sky
