@@ -92,7 +92,16 @@ BOARD_USES_METADATA_PARTITION := true
 # the common tree has no product policy (only vendor), so product is not listed.
 
 # Platform
-BOARD_USES_QCOM_HARDWARE := t
+# This must be the literal string "true": vendor/lineage/config/BoardConfigLineage.mk
+# gates hardware/qcom-caf/common/BoardConfigQcom.mk on
+# `ifeq ($(BOARD_USES_QCOM_HARDWARE),true)`, and that file is what registers
+# hardware/qcom-caf/{bootctrl,thermal,wlan,data-ipa-cfg-mgr} and the sound-trigger
+# HAL as soong namespaces. With any other value the whole CAF layer silently
+# disappears and every module from it is reported as non-existent.
+BOARD_USES_QCOM_HARDWARE := true
+
+# TARGET_BOARD_PLATFORM lives in the common tree: it is a SoC property, not a
+# device one.
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
